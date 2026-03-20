@@ -71,3 +71,7 @@ export default defineConfig([
   },
 ])
 ```
+
+
+
+This is the GSAP animation
