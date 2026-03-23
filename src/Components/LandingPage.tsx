@@ -1,9 +1,11 @@
+import Upper from "./upper/upper";
+import Curtain from "../common/curtain";
 import MIddle from "./MIddle/MIddle";
-import Upper from "./upper/Upper";
 
 const LandingPage = () => {
   return (
     <div>
+      <Curtain />
       <div className="upper">
         <Upper />
       </div>
