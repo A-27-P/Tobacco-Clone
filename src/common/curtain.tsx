@@ -1,0 +1,49 @@
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
+import "./curtain.css";
+
+export default function Curtain() {
+  const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      // Left panels
+      gsap.to(".left-panel", {
+        scaleX: 0,
+        duration: 1.2,
+        ease: "power4.inOut",
+        delay: 0.5,
+        stagger: { amount: 0.8, from: "end" },
+      });
+
+      // Right panels
+      gsap.to(".right-panel", {
+        scaleX: 0,
+        duration: 1.2,
+        ease: "power4.inOut",
+        delay: 0.5,
+        stagger: { amount: 0.8, from: "end" },
+      });
+    }, container);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={container} className="curtain-container">
+      {/* horizonal strips partitioned */}
+      {[...Array(6)].map((_, i) => (
+        <div key={i} className="curtain-row">
+          <div
+            className="curtain-panel left-panel"
+            style={{ backgroundColor: "#640139ff" }}
+          ></div>
+          <div
+            className="curtain-panel right-panel"
+            style={{ backgroundColor: "#640139ff" }}
+          ></div>
+        </div>
+      ))}
+    </div>
+  );
+}
