@@ -74,27 +74,27 @@ const Middle2 = () => {
 
         </span>
       <div className="images-grid-container">
-        <div className='item' style={{ "--r": 1, "--c": 2 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 1, "--c": 4 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 1, "--c": 5 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 1, "--c": 1 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
         <div className='item' style={{ "--r": 2, "--c": 3 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 2, "--c": 1 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 2, "--c": 2 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 3, "--c": 7 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 4, "--c": 3 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 4, "--c": 4 } as React.CSSProperties}>
-          <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 5, "--c": 3 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 4, "--c": 2 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
         <div className='item' style={{ "--r": 5, "--c": 1 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 6, "--c": 5 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 5, "--c": 4 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 6, "--c": 2 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 6, "--c": 1 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
-        <div className='item' style={{ "--r": 9, "--c": 7 } as React.CSSProperties}>
+        <div className='item' style={{ "--r": 6, "--c": 3 } as React.CSSProperties}>
+          <img src={cardimage} alt="" /></div>
+        <div className='item' style={{ "--r": 9, "--c": 2 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
 
       </div>
