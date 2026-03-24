@@ -1,7 +1,7 @@
 import Upper from "./upper/upper";
 import Curtain from "../common/curtain";
 import MIddle from "./MIddle/MIddle";
-import Middle2 from "./Middle2/MIddle2";
+import Middle2 from "./Middle2/Middle2";
 import FaceIcon from "./ui/FaceIcon";
 
 const LandingPage = () => {
