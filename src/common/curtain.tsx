@@ -29,21 +29,25 @@ export default function Curtain() {
     return () => ctx.revert();
   }, []);
 
+  const curtainRows = [];
+  for (let i = 0; i < 6; i++) {
+    curtainRows.push(
+      <div key={i} className="curtain-row">
+        <div
+          className="curtain-panel left-panel"
+          style={{ backgroundColor: "#640139ff" }}
+        ></div>
+        <div
+          className="curtain-panel right-panel"
+          style={{ backgroundColor: "#640139ff" }}
+        ></div>
+      </div>,
+    );
+  }
+
   return (
     <div ref={container} className="curtain-container">
-      {/* horizonal strips partitioned */}
-      {[...Array(6)].map((_, i) => (
-        <div key={i} className="curtain-row">
-          <div
-            className="curtain-panel left-panel"
-            style={{ backgroundColor: "#640139ff" }}
-          ></div>
-          <div
-            className="curtain-panel right-panel"
-            style={{ backgroundColor: "#640139ff" }}
-          ></div>
-        </div>
-      ))}
+      {curtainRows}
     </div>
   );
 }
