@@ -26,11 +26,13 @@ const Middle2 = () => {
 
       tl.to(item, {
         scale: 0,
+      
         scrollTrigger: {
           trigger: item,
           start: "top top",
           end: "bottom top",
-          scrub: true
+          scrub: true,
+          markers: true
         }
       }, "collective");
 
@@ -47,6 +49,30 @@ const Middle2 = () => {
 
   return (
     <div className='middle2-main'>
+          <span className='middle-2-tagline'>
+          An&nbsp;
+          <span className='bold-font'
+          >
+            IMPRESSIVE
+
+          </span>
+          &nbsp;gem in the heart of&nbsp;
+          <span className='bold-font'>
+            AMSTERDAM.
+          </span>  &nbsp;industrial, fresh, innovative and the love for&nbsp;
+          <span className='bold-font'>
+            DETAIL
+          </span>
+
+         &nbsp;and&nbsp;
+          <span className='bold-font'>
+            HISTORY
+
+          </span>
+         &nbsp;oozes from the walls!
+
+
+        </span>
       <div className="images-grid-container">
         <div className='item' style={{ "--r": 1, "--c": 2 } as React.CSSProperties}>
           <img src={cardimage} alt="" /></div>
@@ -77,32 +103,9 @@ const Middle2 = () => {
 
 
 
-      <div className="middle2-heading">
-        <span className='middle-2-tagline'>
-          An&nbsp;
-          <span className='bold-font'
-          >
-            IMPRESSIVE
-
-          </span>
-          &nbsp;gem in the heart of&nbsp;
-          <span className='bold-font'>
-            AMSTERDAM.
-          </span>  &nbsp;Industrial, fresh, innovative and the love for&nbsp;
-          <span className='bold-font'>
-            DETAIL
-          </span>
-
-         &nbsp;and&nbsp;
-          <span className='bold-font'>
-            HISTORY
-
-          </span>
-         &nbsp;oozes from the walls!
-
-
-        </span>
-      </div>
+      {/* <div className="middle2-heading"> */}
+    
+      {/* </div> */}
     </div>
   )
 }

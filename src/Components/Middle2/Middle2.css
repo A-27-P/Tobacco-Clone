@@ -1,8 +1,12 @@
 .middle2-main {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #e6acce;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25rem;
 }
 
 .images-grid-container {
@@ -14,8 +18,8 @@
     grid-template-rows: repeat(10, 1fr) ;
     gap: 2rem;
     padding: 3rem;
-    
-
+    padding-top: 100vh;
+    padding-bottom: 100vh;
 }
 
 .item {
@@ -33,6 +37,7 @@
 .images-grid-container > div {
     grid-row: var(--r);
     grid-column: var(--c);
+
 }
 
 .middle2-heading {
@@ -43,6 +48,8 @@
     height: 100vh;
     width: 100vw;
     background-color: #e6acce;
+    font-family: "Baskerville";
+    font-weight: 500;
     font-size: 30px;
     display: flex;
     justify-content: center;
@@ -53,14 +60,16 @@
 .middle-2-tagline {
     width: 65%;
     /* background-color: red; */
-    height: 13rem;
+    height: 12rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     font-size: 45px;
     font-style: italic;
-
+    position: sticky;
+    top: 23rem;
+    padding-top: 4rem;
 }
 
 .bold-font {
