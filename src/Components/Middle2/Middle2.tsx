@@ -39,17 +39,18 @@ const Middle2 = () => {
           parent.width / 2 -
           (itemrect.left - parent.left + itemrect.width / 2);
 
-        yoffset = parent.top - itemrect.top ;
-          // parent.height / 2 -
-          // (itemrect.top - parent.top + itemrect.height / 2);
+        yoffset = 
+        parent.top - itemrect.top + 1200;
+        // parent.top -
+        // (itemrect.top - parent.top + itemrect.height / 2);
         console.log({ xoffset });
         console.log({ yoffset });
       }
-      let firstdone = false ;
+      let firstdone = false;
       gsap.set(item, {
         transformOrigin: `${random < 0 ? "left" : "right"}`,
         x: xoffset,
-        y: yoffset + 200,
+        y: yoffset ,
         rotation: gsap.utils.random(-5, 5),
       })
       ScrollTrigger.refresh();
@@ -57,38 +58,39 @@ const Middle2 = () => {
       gsap.to(item, {
         x: 0,
         y: 0,
-        rotation: 0, 
-        
-        
+      
+        rotation: 0,
+        duration: 2,
+
         scrollTrigger: {
           trigger: ".images-grid-container",
-          start: "top center",
-          end: "top+=500 center",
+          start: "top+=800 center",
+          end: "top+=1300 center",
           // scrub: true,
-          // markers: true
+          // markers: true,
           onLeave: () => {
-            firstdone = true ;
-            ScrollTrigger.refresh() ;
+            firstdone = true;
+            ScrollTrigger.refresh();
           }
         }
       })
-      
+
 
       items.forEach(item => {
         gsap.to(item, {
-        scale: 0,
-  
-        scrollTrigger: {
-          trigger: item,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          markers: true,
-          onRefresh: () => {
-          if (!firstdone) return false;
-      }
-        },
-      });
+          scale: 0,
+
+          scrollTrigger: {
+            trigger: item,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            // markers: true,
+            onRefresh: () => {
+              if (!firstdone) return false;
+            }
+          },
+        });
       })
 
 
@@ -142,13 +144,13 @@ const Middle2 = () => {
 
       </span>
       <div className="images-grid-container">
-        <div className='item' style={{ "--z": Math.floor(Math.random() * (7) + 0), "--r": 1, "--c": 1 } as React.CSSProperties}>
+        <div className='item' style={{ "--z": Math.floor(Math.random() * (7) + 0), "--r": 1, "--c": 2 } as React.CSSProperties}>
           <img src={img1} alt="" /></div>
         <div className='item' style={{ "--z": Math.floor(Math.random() * (7) + 0), "--r": 1, "--c": 4 } as React.CSSProperties}>
           <img src={img2} alt="" /></div>
         <div className='item' style={{ "--z": Math.floor(Math.random() * (7) + 0), "--r": 3, "--c": 3 } as React.CSSProperties}>
           <img src={img3} alt="" /></div>
-        <div className='item' style={{ "--z": Math.floor(Math.random() * (7) + 0), "--r": 3, "--c": 1 } as React.CSSProperties}>
+        <div className='item' style={{ "--z": Math.floor(Math.random() * (7) + 0), "--r": 2, "--c": 1 } as React.CSSProperties}>
           <img src={img4} alt="" /></div>
         <div className='item' style={{ "--z": Math.floor(Math.random() * (7) + 0), "--r": 5, "--c": 3 } as React.CSSProperties}>
           <img src={img5} alt="" /></div>
