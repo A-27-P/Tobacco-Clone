@@ -26,7 +26,7 @@ const Middle2 = () => {
 
 
     items.forEach(item => {
-      const tl = gsap.timeline();
+      // const tl = gsap.timeline();
 
       const random = gsap.utils.random(-1, 1);
 
@@ -45,39 +45,64 @@ const Middle2 = () => {
         console.log({ xoffset });
         console.log({ yoffset });
       }
-
-      tl.set(item, {
+      let firstdone = false ;
+      gsap.set(item, {
         transformOrigin: `${random < 0 ? "left" : "right"}`,
         x: xoffset,
-        y: yoffset,
+        y: yoffset + 200,
         rotation: gsap.utils.random(-5, 5),
       })
+      ScrollTrigger.refresh();
 
-      tl.to(item, {
+      gsap.to(item, {
         x: 0,
         y: 0,
         rotation: 0, 
-        duration: 2,
-        ease: "power3.out",
+        
+        
         scrollTrigger: {
           trigger: ".images-grid-container",
-          start: "top+=50vh top",
-          end: "top+=80vh top",
-          scrub: true
+          start: "top center",
+          end: "top+=500 center",
+          // scrub: true,
+          // markers: true
+          onLeave: () => {
+            firstdone = true ;
+            ScrollTrigger.refresh() ;
+          }
         }
       })
+      
 
-      tl.to(item, {
+      items.forEach(item => {
+        gsap.to(item, {
         scale: 0,
-
+  
         scrollTrigger: {
           trigger: item,
           start: "top top",
           end: "bottom top",
           scrub: true,
-          // markers: true
-        }
+          markers: true,
+          onRefresh: () => {
+          if (!firstdone) return false;
+      }
+        },
       });
+      })
+
+
+      // tl.to(item, {
+      //   scale: 0,
+
+      //   scrollTrigger: {
+      //     trigger: item,
+      //     start: "top top",
+      //     end: "bottom top",
+      //     scrub: true,
+      //     // markers: true
+      //   }
+      // });
 
 
 
