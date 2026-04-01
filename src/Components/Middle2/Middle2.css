@@ -4,7 +4,7 @@
     background-color: #e6acce;
     position: relative;
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-direction: column;
     align-items: center;
     padding-top: 25rem;
@@ -58,7 +58,6 @@
     grid-column: var(--c);
     z-index: var(--z);
     transform: translateY(calc(var(--z) * 70px));
-    
 }
 
 .middle2-heading {
