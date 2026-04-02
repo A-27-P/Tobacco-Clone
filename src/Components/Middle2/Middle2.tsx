@@ -58,10 +58,8 @@ const Middle2 = () => {
       gsap.to(item, {
         x: 0,
         y: 0,
-      
         rotation: 0,
-        duration: 2,
-
+        duration: 1.3,
         scrollTrigger: {
           trigger: ".images-grid-container",
           start: "top+=800 center",
