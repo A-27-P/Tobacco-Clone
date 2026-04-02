@@ -11,6 +11,14 @@ export default function Navbar() {
   useGSAP(
     () => {
       if (isOpen) {
+        gsap.to(".menu-panel", {
+          xPercent: -50,
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power3.out",
+          pointerEvents: "auto",
+        });
         gsap.to(".top", {
           y: 0,
           rotation: 45,
@@ -32,6 +40,13 @@ export default function Navbar() {
         gsap.to(".menu-open", { y: -20, duration: 0.3, ease: "power2.inOut" });
         gsap.to(".menu-close", { y: -20, duration: 0.3, ease: "power2.inOut" });
       } else {
+        gsap.to(".menu-panel", {
+          y: 40,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power3.in",
+          pointerEvents: "none",
+        });
         gsap.to(".top", {
           y: -5,
           rotation: 0,
@@ -164,6 +179,46 @@ export default function Navbar() {
             </svg>
           </span>
         </button>
+      </div>
+
+      <div className="menu-panel">
+        <ul className="menu-panel-list">
+          <li className="menu-panel-item">
+            <span className="menu-item-num">01</span>
+            <span className="menu-item-text-wrap">
+              <span className="menu-item-text">WHAT'S ON - TICKETS</span>
+              <span className="menu-item-text">WHAT'S ON - TICKETS</span>
+            </span>
+          </li>
+          <li className="menu-panel-item">
+            <span className="menu-item-num">02</span>
+            <span className="menu-item-text-wrap">
+              <span className="menu-item-text">BOOK THIS VENUE</span>
+              <span className="menu-item-text">BOOK THIS VENUE</span>
+            </span>
+          </li>
+          <li className="menu-panel-item">
+            <span className="menu-item-num">03</span>
+            <span className="menu-item-text-wrap">
+              <span className="menu-item-text">GALLERY</span>
+              <span className="menu-item-text">GALLERY</span>
+            </span>
+          </li>
+          <li className="menu-panel-item">
+            <span className="menu-item-num">04</span>
+            <span className="menu-item-text-wrap">
+              <span className="menu-item-text">ABOUT US</span>
+              <span className="menu-item-text">ABOUT US</span>
+            </span>
+          </li>
+          <li className="menu-panel-item">
+            <span className="menu-item-num">05</span>
+            <span className="menu-item-text-wrap">
+              <span className="menu-item-text">CONTACT</span>
+              <span className="menu-item-text">CONTACT</span>
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
   );
