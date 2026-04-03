@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
+import VenueRental from "./Components/VenueRental/VenueRental";
 
 const App = () => {
 const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -25,6 +26,7 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
     const lenis = new Lenis({
       autoRaf: true,
       duration: 3,
+      wheelMultiplier: 0.3,
     });
 
     lenis.on("scroll", () => {
@@ -37,6 +39,7 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
       <ReactLenis root />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/venue-rental" element={<VenueRental />} />
       </Routes>
     </div>
   );
