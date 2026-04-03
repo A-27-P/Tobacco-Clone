@@ -1,4 +1,5 @@
 import React from 'react'
+import MIddle from './Middle/MIddle'
 
 const VenueRental = () => {
   return (
@@ -8,7 +9,7 @@ const VenueRental = () => {
         </div>
         <div className="venue-rental-middle">
             
-            
+          <MIddle/>
 
 
 

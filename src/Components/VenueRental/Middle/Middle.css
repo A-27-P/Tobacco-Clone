@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+.venue-rental-middle {
+    background-color: #e6acce;
+    height: 100vh;
+    
+    width: 100vw;
+}
+
+.v-r-roomsinfo {
+    
+}
+
+.v-r-roominfo-heading {
+    font-style: italic;
+    
+    font-family: Baskerville, Helvetica, Arial, sans-serif;
+    font-size: 142.5px;
+    font-weight: 400;
+    line-height: 114px;
+    color: rgb(0, 0, 0);
+    padding: 45px 120px;
+}
+.bebas {
+    
+    font-family: "Bebas Neue Pro";
+    font-size: 142.5px;
+    font-weight: 900;
+    line-height: 114px;
+    color: rgb(0, 0, 0);
+    font-style: normal;
+}
