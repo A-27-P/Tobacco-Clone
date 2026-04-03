@@ -22,6 +22,8 @@
     gap: 2rem;
     padding: 3rem;
     padding-top: 60vh;
+
+    align-items: start; 
     
     padding-bottom: 80vh;
 }

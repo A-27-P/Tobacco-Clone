@@ -9,8 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
-  max-width: 460px;
+  width: 80%;
+  max-width: 400px;
   height: 55px;
   pointer-events: auto;
   background-color: #ffffff;
@@ -207,4 +207,85 @@
 
 .top-right:hover .pill {
   transform: scale(1.1);
+}
+
+.menu-panel {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 400px;
+  background-color: #542341;
+  border-radius: 4px;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  padding: 8px 0;
+}
+
+.menu-panel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-panel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  padding: 10px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu-item-num {
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  letter-spacing: 0.5px;
+  align-self: flex-end;
+  padding-bottom: 3px;
+  min-width: auto;
+}
+
+.menu-panel-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-text:hover {
+  color: #c998b5;
+}
+
+.menu-item-text-wrap {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 1;
+}
+
+.menu-item-text {
+  display: block;
+  white-space: nowrap;
+  line-height: 1;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-item-text + .menu-item-text {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.menu-panel-item:hover .menu-item-text {
+  transform: translateY(-100%);
 }
