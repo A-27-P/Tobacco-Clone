@@ -6,6 +6,13 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [lang, setLang] = useState("EN");
+
+  const selectLang = (code: string) => {
+    setLang(code);
+    setLangOpen(false);
+  };
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
@@ -98,8 +105,26 @@ export default function Navbar() {
           ease: "power2.inOut",
         });
       }
+
+      if (langOpen) {
+        gsap.to(".lang-panel", {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power3.out",
+          pointerEvents: "auto",
+        });
+      } else {
+        gsap.to(".lang-panel", {
+          y: 40,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power3.in",
+          pointerEvents: "none",
+        });
+      }
     },
-    { scope: containerRef, dependencies: [isOpen, isHovered] },
+    { scope: containerRef, dependencies: [isOpen, isHovered, langOpen] },
   );
 
   return (
@@ -123,8 +148,8 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="nav-right">
-          <span className="lang-text">NL</span>
+        <div className="nav-right" onClick={() => setLangOpen(!langOpen)}>
+          <span className="lang-text">{lang}</span>
           <span className="icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -230,6 +255,26 @@ export default function Navbar() {
             <span className="menu-item-text-wrap">
               <span className="menu-item-text">CONTACT</span>
               <span className="menu-item-text">CONTACT</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Language dropdown */}
+      <div className="lang-panel">
+        <ul className="lang-list">
+          <li className="lang-item" onClick={() => selectLang("NL")}>
+            <span className="menu-item-num">01</span>
+            <span className="menu-item-text-wrap">
+              <span className="menu-item-text">DUTCH (NL)</span>
+              <span className="menu-item-text">DUTCH (NL)</span>
+            </span>
+          </li>
+          <li className="lang-item" onClick={() => selectLang("EN")}>
+            <span className="menu-item-num">02</span>
+            <span className="menu-item-text-wrap">
+              <span className="menu-item-text">ENGLISH (EN)</span>
+              <span className="menu-item-text">ENGLISH (EN)</span>
             </span>
           </li>
         </ul>
