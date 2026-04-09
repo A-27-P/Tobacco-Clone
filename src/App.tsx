@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import LandingPage from "./Components/Home/LandingPage";
 import "./App.css";
@@ -7,9 +7,15 @@ import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import VenueRental from "./Components/VenueRental/VenueRental";
+import Navbar from "./Components/Navbar/Navbar";
 
 const App = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     const scroll = new LocomotiveScroll({
@@ -26,7 +32,7 @@ const App = () => {
     const lenis = new Lenis({
       autoRaf: true,
       duration: 3,
-      wheelMultiplier: 0.3,
+      wheelMultiplier: 0.6,
     });
 
     lenis.on("scroll", () => {
@@ -37,6 +43,7 @@ const App = () => {
   return (
     <div data-scroll-container ref={scrollRef}>
       <ReactLenis root />
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/venue-rental" element={<VenueRental />} />
