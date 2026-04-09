@@ -5,6 +5,7 @@ import Upper from "./upper/upper";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import InfoSection from "./upper/InfoSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +16,7 @@ const VenueRental = () => {
   useGSAP(
     () => {
       gsap.to(imageRef.current, {
-        scale: 1.2,
+        scale: 1.17,
         ease: "none",
         scrollTrigger: {
           trigger: wrapperRef.current,
@@ -58,6 +59,10 @@ const VenueRental = () => {
             scale: 0.99,
           }}
         />
+      </div>
+
+      <div className="venue-below-photo">
+        <InfoSection />
       </div>
 
       <div className="venue-rental-middle">
