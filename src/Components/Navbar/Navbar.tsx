@@ -128,6 +128,7 @@ export default function Navbar() {
   );
 
   return (
+    // MENUUU
     <div ref={containerRef}>
       <nav className="navbar">
         <div className="nav-left">
