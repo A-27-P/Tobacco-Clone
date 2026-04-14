@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400&display=swap");
+
+.venue-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 110px 7.5% 110px 7.5%;
+  background-color: #e6acce;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 520px;
+}
+
+.left-text {
+  flex: 1 1 55%;
+  padding-right: 60px;
+}
+
+.left-text p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  line-height: 1.38;
+  color: #111;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.v-line {
+  width: 1px;
+  background-color: #888;
+  align-self: stretch;
+  margin: 0 60px 0 0;
+  flex-shrink: 0;
+}
+
+.sidebar {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ideal-label {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.events-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.event-item {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  color: #333131;
+  font-weight: 100;
+  cursor: default;
+  line-height: 1.7;
+}
+
+.link-3d {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s ease;
+}
+
+.link-3d:hover {
+  opacity: 0.65;
+}
