@@ -58,6 +58,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/venue-rental" element={<VenueRental />} />
+        <Route path="/tickets" element={<Ticket />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </div>
   );
