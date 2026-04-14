@@ -4,33 +4,34 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 const Cursorpreview = ({ hoveredRoom, position }: { hoveredRoom: { previous: string | null, current: string | null } | null, position: { x: number, y: number } }) => {
+
     const ref = useRef<HTMLDivElement>(null)
     const previousref = useRef<HTMLImageElement>(null)
-    const currentRef = useRef<HTMLImageElement>(null) 
+    const currentRef = useRef<HTMLImageElement>(null)
+
     useGSAP(() => {
         if (!ref.current) return;
         gsap.to(".cursor-preview", {
             top: position.y - 260,
             left: position.x + 1,
-            
+
         })
     }, [position])
-
 
     useGSAP(() => {
         if (!ref.current || !currentRef.current) return;
 
 
-        
+
         const origin = Math.random() > 0.5
             ? "bottom left"
             : "bottom right";
 
-        
+
         gsap.set(currentRef.current, {
             transformOrigin: origin,
         });
-       
+
         gsap.fromTo(
             currentRef.current,
             { scale: 0 },
@@ -38,13 +39,12 @@ const Cursorpreview = ({ hoveredRoom, position }: { hoveredRoom: { previous: str
                 scale: 1,
                 duration: 0.8,
                 ease: "power3.out",
+                overwrite: false 
             }
         );
     }, [hoveredRoom?.current]);
 
-
-
-    if (! hoveredRoom?.current) return;
+    if (!hoveredRoom?.current) return;
 
     return (
         <div className='cursor-preview'
@@ -60,15 +60,10 @@ const Cursorpreview = ({ hoveredRoom, position }: { hoveredRoom: { previous: str
                 )
             } {
                 hoveredRoom.current && (<img src={hoveredRoom.current} alt=""
-                        ref={currentRef}
-                        className='cursor-preview-image current'
-                    />)
+                    ref={currentRef}
+                    className='cursor-preview-image current'
+                />)
             }
-
-
-
-
-
 
         </div>
     )
