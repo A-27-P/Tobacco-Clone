@@ -11,6 +11,7 @@
     
     line-height: 9rem;
     height: 20rem;
+    overflow: hidden;
     
     text-align: center;
     position:sticky;
@@ -28,13 +29,22 @@
     font-weight: 400;
      font-size: 280px;
     font-family: "Bebas Neue" ;
+    animation: comeup 0.8s ease 1;
+}
+@keyframes comeup {
+    from {
+        transform: translate(0px, 1000px);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
 }
 
 .galllery-images {
     display: flex;
     gap: 10rem;
     flex-wrap: wrap;
-    margin-top: 100vh;
+    margin-top: 30vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
