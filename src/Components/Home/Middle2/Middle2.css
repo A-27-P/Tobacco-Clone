@@ -42,7 +42,7 @@
 }
 
 .images-grid-container > div {
-    grid-row: var(--r);
+    grid-row: var(--r); 
     grid-column: var(--c);
     z-index: var(--z);
     transform: translateY(calc(var(--z) * 70px));
