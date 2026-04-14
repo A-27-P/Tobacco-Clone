@@ -219,10 +219,15 @@ export default function Navbar() {
         <ul className="menu-panel-list">
           <li className="menu-panel-item">
             <span className="menu-item-num">01</span>
-            <span className="menu-item-text-wrap">
-              <span className="menu-item-text">WHAT'S ON - TICKETS</span>
-              <span className="menu-item-text">WHAT'S ON - TICKETS</span>
-            </span>
+            <Link
+              to="/tickets"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <span className="menu-item-text-wrap">
+                <span className="menu-item-text">WHAT'S ON - TICKETS</span>
+                <span className="menu-item-text">WHAT'S ON - TICKETS</span>
+              </span>
+            </Link>
           </li>
           <li className="menu-panel-item">
             <span className="menu-item-num">02</span>
