@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import VenueRental from "./Components/VenueRental/VenueRental";
 import Navbar from "./Components/Navbar/Navbar";
+import Gallery from "./Components/Gallery/Gallery";
 
 const App = () => {
   const lenisRef = useRef<Lenis | null>(null);
@@ -56,7 +57,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/venue-rental" element={<VenueRental />} />
-      </Routes>
+        <Route path="/gallery" element={<Gallery />} />
+    </Routes>
     </div>
   );
 };
