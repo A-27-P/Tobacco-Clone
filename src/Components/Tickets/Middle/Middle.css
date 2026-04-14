@@ -1,0 +1,75 @@
+.mid-cont {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  background-color: #11001a;
+  display: flex;
+  margin-top: 10rem;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mid-cont img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.mid-overlay {
+  position: absolute;
+}
+
+.mid-text-content {
+  position: sticky;
+  top: 25vh;
+  margin-left: 120px;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: 70vh;
+  pointer-events: auto;
+  margin-top: 9rem;
+}
+
+.mid-title {
+  font-family: "Bebas Neue", "Barlow Condensed", sans-serif;
+  color: #ffe600;
+  font-size: clamp(60px, 7.8vw, 130px);
+  line-height: 0.85;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.mid-desc {
+  color: #ffffff;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 60px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.mid-btn {
+  position: absolute;
+  bottom: 29px;
+  right: 60px;
+  pointer-events: auto;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 16px 36px;
+  border-radius: 50px;
+  border: none;
+  font-family: "Bebas Neue", "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
