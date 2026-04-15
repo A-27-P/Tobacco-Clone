@@ -9,6 +9,8 @@ import img8 from "../../assets/img8.jpg";
 import img9 from "../../assets/img9.png";
 import img10 from "../../assets/img10.jpg";
 import img11 from "../../assets/img11.jpg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Gallery = () => {
 
@@ -16,6 +18,34 @@ const Gallery = () => {
   const IMG_MAX = 520 ;
   const PAD_MIN = 0 ;
   const PAD_MAX = 60 ;
+
+
+  useGSAP(() => {
+    const imagedivs = gsap.utils.toArray<HTMLDivElement>(".image-div") ;
+
+    imagedivs.forEach((imagediv) => {
+      gsap.to(imagediv, {
+        scale: 0,
+        scrollTrigger : {
+          trigger: imagediv, 
+          start: "top top",
+          end: "bottom top", 
+          scrub: true
+        }
+      })
+    })
+  
+
+
+  }) ;
+
+
+
+
+
+
+
+
 
   return (
     <div className='gallery-main'>
