@@ -1,6 +1,5 @@
 import React from "react";
 import img1 from "../../../assets/img1.jpg";
-
 import img2 from "../../../assets/img2.jpg";
 import img3 from "../../../assets/img3.jpg";
 import img4 from "../../../assets/img4.jpg";
@@ -16,10 +15,18 @@ import "./Middle2.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+
 const Middle2 = () => {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
     const items = gsap.utils.toArray<HTMLElement>(".item");
+
+
+    
+
+    
+
+
 
     items.forEach((item) => {
       // const tl = gsap.timeline();
@@ -35,10 +42,12 @@ const Middle2 = () => {
           parent.width / 2 - (itemrect.left - parent.left + itemrect.width / 2);
 
         yoffset = parent.top - itemrect.top + 1200;
+        
         // parent.top -
         // (itemrect.top - parent.top + itemrect.height / 2);
-        console.log({ xoffset });
-        console.log({ yoffset });
+        // console.log({ xoffset });
+        // console.log({ yoffset });
+
       }
       let firstdone = false;
       gsap.set(item, {
