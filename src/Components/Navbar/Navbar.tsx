@@ -243,10 +243,15 @@ export default function Navbar() {
           </li>
           <li className="menu-panel-item">
             <span className="menu-item-num">03</span>
-            <span className="menu-item-text-wrap">
-              <span className="menu-item-text">GALLERY</span>
-              <span className="menu-item-text">GALLERY</span>
-            </span>
+            <Link
+              to="/gallery"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <span className="menu-item-text-wrap">
+                <span className="menu-item-text">GALLERY</span>
+                <span className="menu-item-text">GALLERY</span>
+              </span>
+            </Link>
           </li>
           <li className="menu-panel-item">
             <span className="menu-item-num">04</span>

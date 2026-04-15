@@ -2,6 +2,7 @@ import Curtain from "../../common/curtain";
 import Middle from "./Middle/Middle";
 import Upper from "./Upper/Upper";
 import "./Ticket.css";
+import Bottom from "./bottom/Bottom";
 
 export default function Ticket() {
   return (
@@ -14,7 +15,9 @@ export default function Ticket() {
       <div className="ticket-middle">
         <Middle />
       </div>
-      <div className="ticket-lower"></div>
+      <div className="ticket-lower">
+        <Bottom />
+      </div>
     </div>
   );
 }

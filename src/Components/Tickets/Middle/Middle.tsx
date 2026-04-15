@@ -15,29 +15,15 @@ export default function Middle() {
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        contRef.current,
+        imgRef.current,
         {
+          filter: "brightness(0.3)",
           scale: 1.6,
           transformOrigin: "center center",
         },
         {
-          scale: 1.1,
-          scrollTrigger: {
-            trigger: ".mid-cont",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 2,
-          },
-        },
-      );
-
-      gsap.fromTo(
-        imgRef.current,
-        {
-          filter: "brightness(0.3)",
-        },
-        {
           filter: "brightness(0.85)",
+          scale: 1.1,
           scrollTrigger: {
             trigger: ".mid-cont",
             start: "top bottom",
@@ -61,9 +47,15 @@ export default function Middle() {
           height: "100%",
           display: "flex",
           justifyContent: "center",
+          overflow: "hidden",
         }}
       >
-        <img ref={imgRef} src={ticket} alt="" />
+        <img
+          ref={imgRef}
+          src={ticket}
+          alt=""
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
       </div>
 
       <div className="mid-overlay">

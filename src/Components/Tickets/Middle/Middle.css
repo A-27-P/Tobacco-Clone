@@ -6,7 +6,6 @@
   display: flex;
   margin-top: 10rem;
   justify-content: center;
-  overflow: hidden;
 }
 
 .mid-cont img {
@@ -18,6 +17,11 @@
 
 .mid-overlay {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .mid-text-content {
@@ -27,7 +31,7 @@
   display: flex;
   flex-direction: column;
   width: 90vw;
-  height: 70vh;
+  height: auto;
   pointer-events: auto;
   margin-top: 9rem;
 }
@@ -58,8 +62,8 @@
 
 .mid-btn {
   position: absolute;
-  bottom: 29px;
-  right: 60px;
+  bottom: 63px;
+  right: 150px;
   pointer-events: auto;
   background-color: #ffffff;
   color: #000000;
